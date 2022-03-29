@@ -1,0 +1,20 @@
+<div class="main">
+  <h1>To Do List</h1>
+  <h2>Чем бы ты хотел заняться сегодня?</h2>
+
+  <ul>
+    <li *ngFor="let item of items">{{item.description}}</li>
+  </ul>
+</div>
+
+<label for="addItemInput">Добавть дело в список</label>
+
+<input
+  #newItem
+  placeholder="введите дело"
+  (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+  class="lg-text-input"
+  id="addItemInput"
+/>
+
+<button class="btn-primary" (click)="addItem(newItem.value)">Добавить</button>
